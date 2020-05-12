@@ -2,6 +2,7 @@ public class Karakter {
     // user által választott tulajdonságok
     private Fajok faj;
     private Kasztok kaszt;
+    private KasztStrategia kasztStrategia;
 
     // kockadobással meghatározott tulajdonságok
     private int ero;
@@ -23,4 +24,9 @@ public class Karakter {
     private int CE;
     private int pszipont;
     private int manapont;
+
+    public Karakter(KasztStrategia kasztStrategia) {
+        this.kasztStrategia = kasztStrategia;
+        this.ero = kasztStrategia.setEro();
+    }
 }
