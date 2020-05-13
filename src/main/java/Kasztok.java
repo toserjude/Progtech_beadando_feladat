@@ -1,3 +1,3 @@
 public enum Kasztok {
-    harcos, fejvadasz, lovag, tolvaj, pap, boszorkany, varazslo
+    harcos, fejvadász, lovag, tolvaj, pap, boszorkány, varazsló
 }

@@ -1,5 +1,6 @@
 public class Karakter implements IKarakter {
     // user által választott tulajdonságok
+    private String nev;
     private Fajok faj;
     private Kasztok kaszt;
     private KasztStrategia kasztStrategia;
@@ -27,15 +28,16 @@ public class Karakter implements IKarakter {
 
     public Karakter(KasztStrategia kasztStrategia) {
         this.kasztStrategia = kasztStrategia;
+
         setEro();
         setGyorsasag();
         setAllokepesseg();
-        this.ugyesseg = kasztStrategia.setUgyesseg();
-        this.egeszseg = kasztStrategia.setEgeszseg();
-        this.szepseg = kasztStrategia.setSzepseg();
-        this.intelligencia = kasztStrategia.setIntelligencia();
-        this.akaratero = kasztStrategia.setAkaratero();
-        this.asztral = kasztStrategia.setAsztral();
+        setUgyesseg();
+        setEgeszseg();
+        setSzepseg();
+        setIntelligencia();
+        setAkaratero();
+        setAsztral();
 
         this.ep = kasztStrategia.setEp() +  getEgeszseg() - 10;
         this.fp = kasztStrategia.setFp() + (getAllokepesseg() - 10)  + (getAkaratero() - 10);
@@ -45,6 +47,18 @@ public class Karakter implements IKarakter {
         this.CE = kasztStrategia.setCE();
         this.pszipont = kasztStrategia.setPszipont();
         this.manapont = kasztStrategia.setManapont();
+    }
+
+    public void setNev(String nev) {
+        this.nev = nev;
+    }
+
+    public void setFaj(Fajok faj) {
+        this.faj = faj;
+    }
+
+    public void setKaszt(Kasztok kaszt) {
+        this.kaszt = kaszt;
     }
 
     public void setEro() {
@@ -81,6 +95,19 @@ public class Karakter implements IKarakter {
 
     public void setAsztral() {
         this.asztral = kasztStrategia.setAsztral();
+    }
+
+
+    public String getNev() {
+        return nev;
+    }
+
+    public Fajok getFaj() {
+        return faj;
+    }
+
+    public Kasztok getKaszt() {
+        return kaszt;
     }
 
     @Override

@@ -1,4 +1,5 @@
 public interface IKarakter {
+
     int getEro();
 
     int getGyorsasag();
