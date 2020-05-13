@@ -1,4 +1,4 @@
-public class Lovag {
+public class Lovag extends KasztStrategia {
     private final Kockadobas kockadobas = new Kockadobas();
 
     public int setEro() { return kockadobas._k6_12_kf(); }

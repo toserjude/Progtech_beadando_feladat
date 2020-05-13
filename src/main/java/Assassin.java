@@ -1,4 +1,4 @@
-public class Assassin {
+public class Assassin extends KasztStrategia {
     private final Kockadobas kockadobas = new Kockadobas();
 
     public int setEro() { return kockadobas._2k6_6(); }

@@ -1,4 +1,4 @@
-public class Harcos {
+public class Harcos extends KasztStrategia {
 
     private final Kockadobas kockadobas = new Kockadobas();
 
