@@ -65,6 +65,7 @@ public class Main {
         System.out.println("NÉV: " + nev);
         System.out.println("FAJ: " + faj);
         System.out.println("KASZT: " + kaszt);
+        System.out.println("SZINT: 1");
         karakterFajjal.printValues();
     }
 }

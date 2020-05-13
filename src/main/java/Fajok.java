@@ -1,3 +1,3 @@
 public enum Fajok {
-    ember, elf, félelf, törpe, ork
+    elf, félelf, törpe, ork
 }
