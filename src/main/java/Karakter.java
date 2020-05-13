@@ -1,4 +1,4 @@
-public class Karakter {
+public class Karakter implements IKarakter {
     // user által választott tulajdonságok
     private Fajok faj;
     private Kasztok kaszt;
@@ -27,9 +27,9 @@ public class Karakter {
 
     public Karakter(KasztStrategia kasztStrategia) {
         this.kasztStrategia = kasztStrategia;
-        this.ero = kasztStrategia.setEro();
-        this.gyorsasag = kasztStrategia.setGyorsasag();
-        this.allokepesseg = kasztStrategia.setAllokepesseg();
+        setEro();
+        setGyorsasag();
+        setAllokepesseg();
         this.ugyesseg = kasztStrategia.setUgyesseg();
         this.egeszseg = kasztStrategia.setEgeszseg();
         this.szepseg = kasztStrategia.setSzepseg();
@@ -47,42 +47,88 @@ public class Karakter {
         this.manapont = kasztStrategia.setManapont();
     }
 
+    public void setEro() {
+        this.ero = kasztStrategia.setEro();
+    }
+
+    public void setGyorsasag() {
+        this.gyorsasag = kasztStrategia.setGyorsasag();
+    }
+
+    public void setAllokepesseg() {
+        this.allokepesseg = kasztStrategia.setAllokepesseg();
+    }
+
+    public void setUgyesseg() {
+        this.ugyesseg = kasztStrategia.setUgyesseg();
+    }
+
+    public void setEgeszseg() {
+        this.egeszseg = kasztStrategia.setEgeszseg();
+    }
+
+    public void setSzepseg() {
+        this.szepseg = kasztStrategia.setSzepseg();
+    }
+
+    public void setIntelligencia() {
+        this.intelligencia = kasztStrategia.setIntelligencia();
+    }
+
+    public void setAkaratero() {
+        this.akaratero = kasztStrategia.setAkaratero();
+    }
+
+    public void setAsztral() {
+        this.asztral = kasztStrategia.setAsztral();
+    }
+
+    @Override
     public int getEro() {
         return ero;
     }
 
+    @Override
     public int getGyorsasag() {
         return gyorsasag;
     }
 
+    @Override
     public int getAllokepesseg() {
         return allokepesseg;
     }
 
+    @Override
     public int getUgyesseg() {
         return ugyesseg;
     }
 
+    @Override
     public int getEgeszseg() {
         return egeszseg;
     }
 
+    @Override
     public int getSzepseg() {
         return szepseg;
     }
 
+    @Override
     public int getIntelligencia() {
         return intelligencia;
     }
 
+    @Override
     public int getAkaratero() {
         return akaratero;
     }
 
+    @Override
     public int getAsztral() {
         return asztral;
     }
 
+    @Override
     public void printValues() {
         System.out.println("------------------ KOCKADOBÁS EREDMÉNYEK------------------------");
         System.out.println("ERŐ: " + getEro());
