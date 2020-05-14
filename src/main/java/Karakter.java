@@ -1,8 +1,4 @@
 public class Karakter implements IKarakter {
-    // user által választott tulajdonságok
-    private String nev;
-    private Fajok faj;
-    private Kasztok kaszt;
     private KasztStrategia kasztStrategia;
 
     // kockadobással meghatározott tulajdonságok
@@ -19,6 +15,8 @@ public class Karakter implements IKarakter {
     // számolt tulajdonságok
     private int ep;
     private int fp;
+
+    // kaszt specifikus értékek
     private int KE;
     private int TE;
     private int VE;
@@ -26,9 +24,10 @@ public class Karakter implements IKarakter {
     private int pszipont;
     private int manapont;
 
+   // public Karakter(){};
+
     public Karakter(KasztStrategia kasztStrategia) {
         this.kasztStrategia = kasztStrategia;
-
         setEro();
         setGyorsasag();
         setAllokepesseg();
@@ -39,26 +38,14 @@ public class Karakter implements IKarakter {
         setAkaratero();
         setAsztral();
 
-        this.ep = kasztStrategia.setEp() +  getEgeszseg() - 10;
-        this.fp = kasztStrategia.setFp() + (getAllokepesseg() - 10)  + (getAkaratero() - 10);
+        this.ep = getEgeszseg() == 20 ? kasztStrategia.setEp() + 10 : kasztStrategia.setEp() +  getEgeszseg() % 10;
+        this.fp = kasztStrategia.setFp() + (getAllokepesseg() % 10)  + (getAkaratero() % 10);
         this.KE = kasztStrategia.setKE();
         this.TE = kasztStrategia.setTE();
         this.VE = kasztStrategia.setVE();
         this.CE = kasztStrategia.setCE();
         this.pszipont = kasztStrategia.setPszipont();
         this.manapont = kasztStrategia.setManapont();
-    }
-
-    public void setNev(String nev) {
-        this.nev = nev;
-    }
-
-    public void setFaj(Fajok faj) {
-        this.faj = faj;
-    }
-
-    public void setKaszt(Kasztok kaszt) {
-        this.kaszt = kaszt;
     }
 
     public void setEro() {
@@ -95,19 +82,6 @@ public class Karakter implements IKarakter {
 
     public void setAsztral() {
         this.asztral = kasztStrategia.setAsztral();
-    }
-
-
-    public String getNev() {
-        return nev;
-    }
-
-    public Fajok getFaj() {
-        return faj;
-    }
-
-    public Kasztok getKaszt() {
-        return kaszt;
     }
 
     @Override
