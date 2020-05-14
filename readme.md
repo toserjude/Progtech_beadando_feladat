@@ -4,7 +4,7 @@ Karaktergeneráló alkalmazás M.A.G.U.S. rendszerű szerepjátékhoz
 
 Az alkalmazás célja: 
 M.A.G.U.S. rendszerű szerepjátékhoz induló karakter legenerálása a felhasználó által megadott kombinációban konzolos alkalmazásban, 
-vagy teljesen véletlenszerű kombinációban, az Első Törvénykönyv szabályrendszerének megfelelően.
+az Első Törvénykönyv szabályrendszerének megfelelően.
 
 Tervezési alapelveknek való megfelelés:
 GOF2 - stratégia alkalmazása (objektumösszetétel miatt)
